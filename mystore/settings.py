@@ -126,7 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 if 'AWS_STORAGE_BUCKET_NAME' in os.environ:
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
@@ -139,6 +138,11 @@ else:
     MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+if DEBUG:
+    INSTALLED_APPS += ('naomi',)
+    EMAIL_BACKEND = 'naomi.mail.backends.naomi.NaomiBackend'
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'mail')
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
