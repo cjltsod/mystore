@@ -18,18 +18,18 @@
     "default": {
         "boto3": {
             "hashes": [
-                "sha256:7ea6c74631da553999594e83fd42ed14d7512f425ae082cbbf180911537d609a",
-                "sha256:9f65209b176b4559667a9691f96be6c8bd2dafc30e0c211ce5a7e031bb3b9737"
+                "sha256:33257e7c8da6880a00c38789011e5d8acdd7e6a9bc5bdabc1eb7d441837b2d63",
+                "sha256:9c0233b879996f8232c35e903d07017ffad97b2dadd70758d9d28ef86aa9ed13"
             ],
             "index": "pypi",
-            "version": "==1.9.154"
+            "version": "==1.9.155"
         },
         "botocore": {
             "hashes": [
-                "sha256:8b0367dc5af8182fe82b55cf93425f99bff577c473a37468a46bf3717fcbb117",
-                "sha256:8bfa2a5f7c6ceae85907cbba2024c8b6caf918b1fc575ee9a18a6a1c22010c7e"
+                "sha256:e5f5ea3edd16d2846ca984fd57d31ad98526020fcea630f47bb00a11e61957b9",
+                "sha256:ff9070a5e707c9c445622167501dccfe9ec893f761792ae100c508435a38cda8"
             ],
-            "version": "==1.12.154"
+            "version": "==1.12.155"
         },
         "certifi": {
             "hashes": [
@@ -103,11 +103,11 @@
         },
         "django-spgateway": {
             "hashes": [
-                "sha256:505bcad8bf01bb35b445e7d6a9bfb6cc979025cd6850967dc26d0b15d1ad2556",
-                "sha256:6aa73fefeca85a283ef909be6c2cb169809fa01b3437afa2a5e0b319b5b1f9fe"
+                "sha256:9ca8cb59027b7986015518dd34146be87132dcd3d6ab77322d97945b0610c5e4",
+                "sha256:e7057acc678b444c686cfc49ef17ae4faefd30b11ebf035a1d6b10b3fb5c9e35"
             ],
             "index": "pypi",
-            "version": "==0.4.0"
+            "version": "==0.7.6"
         },
         "django-storages": {
             "hashes": [
