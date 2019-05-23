@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'spgateway',
     'bootstrap4',
     'fontawesome',
+    'anymail',
     'storages',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -154,10 +155,19 @@ SPGATEWAY_PROFILE = {
 SPGATEWAY_MERCHANTID = os.environ.get('SPGATEWAY_MERCHANT_ID', '')
 SPGATEWAY_ORDERMODEL = 'estore.Order'
 
-if DEBUG:
+if os.environ.get('MAILGUN_API_KEY'):
+    ANYMAIL = {
+        'MAILGUN_API_KEY': os.environ.get('MAILGUN_API_KEY'),
+        'MAILGUN_SENDER_DOMAIN': os.environ.get('MAILGUN_SENDER_DOMAIN'),
+    }
+    EMAIL_BACKEND = 'anymail.backends.mailgun.EmailBackend'
+    DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL')
+elif DEBUG:
     INSTALLED_APPS += ('naomi',)
     EMAIL_BACKEND = 'naomi.mail.backends.naomi.NaomiBackend'
     EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'mail')
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
