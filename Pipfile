@@ -19,6 +19,7 @@ django-fontawesome = "*"
 django-fsm = "*"
 django-spgateway = "*"
 django-anymail = {extras = ["mailgun"],version = "*"}
+celery = "*"
 
 [requires]
 python_version = "3.7"

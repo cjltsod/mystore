@@ -169,5 +169,10 @@ elif DEBUG:
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+if os.environ.get('CLOUDAMQP_URL'):
+    CELERY_BROKER_URL = os.environ.get('CLOUDAMQP_URL')
+    CELERY_ACCEPT_CONTENT = ['json']
+    CELERY_TASK_SERIALIZER = 'json'
+
 # Activate Django-Heroku.
 django_heroku.settings(locals())
